@@ -13,5 +13,5 @@
 ## Instalation
 
 - Clone the repository.
-- Import the database file locate in db_fie folder.
+- Import the database file locate in db_file folder.
 - Run "php artisan serve" in command line.
