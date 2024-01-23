@@ -1,0 +1,49 @@
+body {
+	/* Set the background color to gray */
+    background-color: #999;
+
+    /* Apply a blur effect */
+/*    filter: blur(5px);*/
+
+    /* Ensure the content is visible through the blurred background */
+/*    background-clip: content-box;*/
+}
+
+.login-page {
+    position: relative;
+    height: 100vh; /* Optional: Set a height to center vertically within the viewport */
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Your content styles go here */
+}
+
+.login-card {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-card form {
+    margin-top: 20px;
+}
+
+.login-card .form-floating {
+    margin-bottom: 15px;
+}
+
+.login-card .btn-primary {
+    width: 100%;
+}
