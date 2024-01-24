@@ -14,7 +14,7 @@ class EmployeeHelpers
         if ($id != null) {
             $data = $employee->where('id', $id)->first();   
         } else {
-            $data = $employee->get()->toArray();
+            $data = $employee->get();
         }
         return $data;
     }
@@ -23,10 +23,17 @@ class EmployeeHelpers
     {
         $employeeCountByGender = Employees::select('gender', DB::raw('COUNT(*) as count'))
                             ->groupBy('gender')
-                            ->get()
-                            ->toArray();
+                            ->get();
 
         return $employeeCountByGender;
+    }
+
+    public static function get_avgAge()
+    {
+        $employeeAvgAge = Employees::select(DB::raw('AVG(DATEDIFF(CURDATE(), birthdate) / 365) AS average_age'))
+                            ->first();
+
+        return $employeeAvgAge;
     }
 
     public static function get_allMonthlySalarySum()

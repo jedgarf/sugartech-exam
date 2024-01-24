@@ -29,11 +29,13 @@ Route::get('/dashboard', function () {
 
     $user = UserHelpers::get(Session::get('user_id'));
     $gender_count = EmployeeHelpers::get_genderCount();
+    $avgAge = EmployeeHelpers::get_avgAge();
     $sum_all_monthly_salary = EmployeeHelpers::get_allMonthlySalarySum();
-    
+
     $data = ["page_name" => "Dashboard", 
             "user" => $user, 
             "gender_count" => $gender_count,
+            "avgAge" => $avgAge,
             "sum_all_monthly_salary" => $sum_all_monthly_salary];
     return view('dashboard', $data);
 })->middleware('validateLoginSession')->name('dashboard');
@@ -69,6 +71,6 @@ Route::prefix('employees')->middleware('validateLoginSession')->group(function (
     })->name('edit_employee');
 
     Route::post('/create', [EmployeeController::class, 'add'])->name('create_employee');
-    Route::put('/update/{id}', [EmployeeController::class, 'edit'])->name('update_employee');
-    Route::delete('/delete/{id}', [EmployeeController::class, 'destroy'])->name('delete_employee');
+    Route::post('/update/{id}', [EmployeeController::class, 'edit'])->name('update_employee');
+    Route::get('/delete/{id}', [EmployeeController::class, 'destroy'])->name('delete_employee');
 });

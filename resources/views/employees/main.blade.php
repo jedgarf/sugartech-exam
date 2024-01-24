@@ -11,12 +11,17 @@
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <a href="{{ route('add_employee') }}">
-                                <button class="btn btn-sm btn-primary" style="float: right;">Add</button>
+                                <button class="btn btn-sm btn-success" style="float: right;">Add</button>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    @if(session('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover" width="100%">
                             <thead>
@@ -34,13 +39,17 @@
                                     @foreach ($employees as $employee)
                                         <tr>
                                             <td>{{ $employee->first_name }}</td>
-                                            <td>{{ $employee->first_name }}</td>
+                                            <td>{{ $employee->last_name }}</td>
                                             <td>{{ $employee->gender }}</td>
-                                            <td>{{ $employee->birthdate }}</td>
-                                            <td>{{ $employee->monthly_salary }}</td>
+                                            <td>{{ date('F d, Y', strtotime($employee->birthdate)) }}</td>
+                                            <td>₱ {{ number_format($employee->monthly_salary, 2, '.', ',') }}</td>
                                             <td>
-                                                <button class="btn btn-sm btn-success">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                                <a href="{{ route('edit_employee', $employee->id) }}">
+                                                    <button class="btn btn-sm btn-success">Edit</button>
+                                                </a>
+                                                <a href="{{ route('delete_employee', $employee->id) }}" onclick="return confirm('are you sure you want to delete this employee?')">
+                                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach

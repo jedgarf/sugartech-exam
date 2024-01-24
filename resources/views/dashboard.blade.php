@@ -33,12 +33,8 @@
                             Average age of all employees
                         </div>
                         <div class="card-body">
-                            @if (count($gender_count) > 0)
-                                <ul>
-                                @foreach ($gender_count as $item)
-                                    <li>{{ $item->gender }} - {{ $item->count }}</li>
-                                @endforeach
-                                <ul>
+                            @if ($avgAge->average_age)
+                            {{ number_format($avgAge->average_age, 1) }} years old
                             @else
                             No record found.
                             @endif
@@ -52,7 +48,7 @@
                         </div>
                         <div class="card-body">
                             @if ($sum_all_monthly_salary->total_monthly_salary)
-                                ₱ {{ $sum_all_monthly_salary->total_monthly_salary }}
+                                ₱ {{ number_format($sum_all_monthly_salary->total_monthly_salary, 2, '.', ',') }}
                             @else
                             No record found.
                             @endif

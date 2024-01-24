@@ -9,6 +9,10 @@ body {
 /*    background-clip: content-box;*/
 }
 
+a {
+    text-decoration-line: none;
+}
+
 .login-page {
     position: relative;
     height: 100vh; /* Optional: Set a height to center vertically within the viewport */
@@ -44,3 +48,4 @@ body {
 .login-card .btn-primary {
     width: 100%;
 }
+

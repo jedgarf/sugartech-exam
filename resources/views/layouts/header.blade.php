@@ -28,7 +28,7 @@
         </li>
       </ul>
       <div class="d-flex">
-        <a href="{{ route('logout') }}"><button class="btn btn-primary btn-sm">Logout</button></a>
+        <a href="{{ route('logout') }}"><button class="btn btn-danger btn-sm">Logout</button></a>
       </div>
     </div>
   </div>
