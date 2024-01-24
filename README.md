@@ -12,11 +12,11 @@
 
 ## Instalation
 
-- Clone the repository.
-- Import the database file locate in db_file folder.
-- Copy .env.sample to .env and add your db configuration.
-- Run "composer install" in command line to install all dependencies.
-- Run "php artisan serve" in command line.
+1. Clone the repository.
+2. Import the database file locate in db_file folder.
+3. Copy .env.sample to .env and add your db configuration.
+4. Run "composer install" in command line to install all dependencies.
+5. Run "php artisan serve" in command line.
 
 ## Admin Account
 ```
