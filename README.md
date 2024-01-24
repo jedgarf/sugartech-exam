@@ -17,3 +17,8 @@
 - Copy .env.sample to .env and add your db configuration.
 - Run "composer install" in command line to install all dependencies.
 - Run "php artisan serve" in command line.
+
+## Admin Account
+
+username: admin
+password: sugartechadmin
