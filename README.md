@@ -19,6 +19,7 @@
 - Run "php artisan serve" in command line.
 
 ## Admin Account
-
+```
 username: admin
 password: sugartechadmin
+```
