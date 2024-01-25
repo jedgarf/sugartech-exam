@@ -17,7 +17,7 @@
 <div class="login-page">
 	<div class="login-container">
 		<div class="login-card">
-	        <h2 style="font-weight: bolder;">SugarTech Mini Project Exam</h2>
+	        <h2 style="font-weight: bolder;">SugarTech Mini Project</h2>
 	        @if(session('loginMsg'))
 			    <div class="alert alert-success">
 			        {{ session('loginMsg') }}
